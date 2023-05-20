@@ -1,4 +1,4 @@
-Descrição: Este repositório contém um projeto de controle escolar desenvolvido durante o curso Programador Web do Senac Catalão Goiás. O projeto é uma aplicação front-end em Vue.js que consome uma API e oferece recursos para gerenciar alunos, cursos e matrículas em uma instituição de ensino.
+Descrição: Este repositório contém um projeto de controle escolar desenvolvido durante o curso Programador Web do Senac Catalão - Goiás. O projeto é uma aplicação front-end em Vue.js que consome uma API e oferece recursos para gerenciar alunos, cursos e matrículas em uma instituição de ensino.
 
 Recursos principais:
 
