@@ -49,7 +49,7 @@
     },    
     created() {
       const codigocurso = this.$route.params.codigocurso;
-      axios.get(`http://localhost:3000/cursos/${codigocurso}`).then(response => {
+      axios.get(`apiwebsenac21.azurewebsites.net/cursos/${codigocurso}`).then(response => {
         this.curso.nome = response.data[0].nome;
         this.curso.cargahoraria = response.data[0].cargahoraria;
         this.curso.inicio = response.data[0].inicio.split('/').reverse().join('-');
@@ -63,7 +63,7 @@
       submitForm() {        
         const codigocurso = this.$route.params.codigocurso;
         this.curso.valor = this.curso.valor.replace(',', '.');        
-        axios.put(`http://localhost:3000/cursos/${codigocurso}`, this.curso).then(() => {
+        axios.put(`apiwebsenac21.azurewebsites.net/cursos/${codigocurso}`, this.curso).then(() => {
           this.$router.push({ name: 'cursos' });
         });
       }
