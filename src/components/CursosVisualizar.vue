@@ -43,10 +43,10 @@ export default {
   },
   created() {
     const codigocurso = this.$route.params.codigocurso;
-    axios.get(`http://localhost:3000/alunosPorCurso/${codigocurso}`).then(response => {
+    axios.get(`apiwebsenac21.azurewebsites.net/alunosPorCurso/${codigocurso}`).then(response => {
       this.alunos = response.data;
     });
-    axios.get(`http://localhost:3000/cursos/${codigocurso}`).then(response2 => {
+    axios.get(`apiwebsenac21.azurewebsites.net/cursos/${codigocurso}`).then(response2 => {
       this.curso = response2.data
       this.curso = this.curso[0]
     });
@@ -58,7 +58,7 @@ export default {
 
     },
     deleteMatricula(codigomatricula) {
-      axios.delete('http://localhost:3000/matriculas/'+codigomatricula).then(() => {
+      axios.delete('apiwebsenac21.azurewebsites.net/'+codigomatricula).then(() => {
           // Atualiza a lista de alunos
           this.alunos = this.alunos.filter(aluno => aluno.codigomatricula !== codigomatricula);
       });                    
