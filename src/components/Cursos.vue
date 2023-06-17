@@ -40,16 +40,16 @@
       };
     },
     created() {
-      axios.get('http://localhost:3000/cursos').then(response => {
+      axios.get('apiwebsenac21.azurewebsites.net/cursos').then(response => {
         console.log(response.data);
         this.cursos = response.data;
       });
     },
     methods: {     
       deleteCurso(codigocurso) {
-        axios.get('http://localhost:3000/alunosPorCurso/'+codigocurso).then(response => {
+        axios.get('apiwebsenac21.azurewebsites.net/alunosPorCurso/'+codigocurso).then(response => {
           if ( response.data.length == 0 ) {
-            axios.delete('http://localhost:3000/cursos/'+codigocurso).then(() => {
+            axios.delete('apiwebsenac21.azurewebsites.net/cursos/'+codigocurso).then(() => {
               // Atualiza a lista de cursos
               this.cursos = this.cursos.filter(curso => curso.codigocurso !== codigocurso);
             });  
