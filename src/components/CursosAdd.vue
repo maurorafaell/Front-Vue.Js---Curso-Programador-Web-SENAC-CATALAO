@@ -62,7 +62,7 @@
           turno: this.curso.turno,
           valor: this.curso.valor,
         };
-         axios.post('http://localhost:3000/cursos', curso).then(() => {
+         axios.post('apiwebsenac21.azurewebsites.net/cursos', curso).then(() => {
           // Redireciona para a página de listagem de cursos
           this.$router.push({ name: 'cursos' });
         });
