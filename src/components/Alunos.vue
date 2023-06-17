@@ -40,16 +40,16 @@
       };
     },
     created() {
-      axios.get('http://localhost:3000/alunos').then(response => {
+      axios.get('apiwebsenac21.azurewebsites.net/alunos').then(response => {
         console.log(response.data);
         this.alunos = response.data;
       });
     },
     methods: {  
       deleteAluno(codigoaluno) {
-        axios.get('http://localhost:3000/matriculasPorAluno/'+codigoaluno).then(response => {
+        axios.get('apiwebsenac21.azurewebsites.net/'+codigoaluno).then(response => {
           if ( response.data.length == 0 ) {
-            axios.delete('http://localhost:3000/alunos/'+codigoaluno).then(() => {
+            axios.delete('apiwebsenac21.azurewebsites.net/alunos/'+codigoaluno).then(() => {
               // Atualiza a lista de alunos
               this.alunos = this.alunos.filter(aluno => aluno.codigoaluno !== codigoaluno);
             });  
