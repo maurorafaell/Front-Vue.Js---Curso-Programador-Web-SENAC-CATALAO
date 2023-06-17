@@ -57,7 +57,7 @@ methods: {
   verificarAutenticacao() {
     const token = localStorage.getItem('token') // recupera o token do local storage
 
-    fetch('http://localhost:3000/autenticado', {
+    fetch('apiwebsenac21.azurewebsites.net/autenticado', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
